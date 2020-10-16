@@ -1,6 +1,6 @@
 import { store, setFriend } from '../../modules';
 
-
+// baseUrl
 const baseUrl = 'https://simple-contact-crud.herokuapp.com';
 
 const apiUrl = {
