@@ -44,14 +44,16 @@ const FormFriend = () => {
 
   const initialData = React.useCallback(() => {
     if(id) {
+      dispatch(setLoading(true))
       getFriend(id).then(data => {
         setImage(data.photo)
         setFirstName(data.firstName)
         setLastName(data.lastName);
         setAge(data.age)
-      })
+        dispatch(setLoading(false))
+      }).catch(() => dispatch(setLoading(false)))
     }
-  }, [id])
+  }, [id, dispatch])
 
   React.useEffect(() => {
     initialData();
