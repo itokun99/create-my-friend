@@ -7,14 +7,14 @@ import Dashboard from './pages/Dashboard';
 import FormFriend from './pages/FormFriend';
 import FriendList from './pages/FriendList';
 import FriendDetail from './pages/FriendDetail';
-import { AppContainer, Popup } from './components';
+import { AppContainer, Popup, Loading } from './components';
 import { useSelector, useDispatch } from 'react-redux';
 import { getStorage } from './services';
 import { setProfile } from './modules';
 
 
 const App = () => {
-  const { popup, profile } = useSelector(state  => state);
+  const { popup, profile, loading } = useSelector(state  => state);
   const dispatch = useDispatch()
 
   React.useEffect(() => {
@@ -38,6 +38,7 @@ const App = () => {
           <Route path="*" component={NotFound404} exact name="NotFound404" />
         </Switch>
         <Popup {...popup} />
+        <Loading {...loading} />
       </AppContainer>
     </BrowserRouter>
   )

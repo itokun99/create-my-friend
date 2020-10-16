@@ -1,5 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setLoading } from '../../modules';
 import { getFriend } from '../../services';
 import UserPhotoItem from '../UserPhotoItem';
 import { useHistory } from 'react-router-dom';
@@ -7,11 +8,13 @@ import { useHistory } from 'react-router-dom';
 
 const FriendGrid = () => {
   const history = useHistory();
+  const dispatch  = useDispatch();
   const friends = useSelector(state => state.friend.all);
 
   React.useEffect(() => {
-      getFriend();
-  }, [])
+      dispatch(setLoading(true));
+      getFriend().then(() => dispatch(setLoading(false))).catch(() => dispatch(setLoading(false)));
+  }, [dispatch])
 
   return (
     <div className="friend-grid">

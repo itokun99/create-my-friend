@@ -16,7 +16,7 @@
     width: 100%;
     left: 0;
     bottom: 0;
-    padding: 42px 42px;
+    padding: 32px;
     box-sizing: border-box;
     background-color: #fff;
     border-radius: 18px 18px 0 0;
@@ -32,6 +32,8 @@
   }
 
   &__button-wrapper {
+    display: flex;
+    justify-content: center;
     text-align: center;
   }
 

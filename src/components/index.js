@@ -12,6 +12,7 @@ import UserListItem from './UserListItem';
 import Popup from './Popup';
 import UserPhotoItem from './UserPhotoItem';
 import FriendGrid from './FriendGrid';
+import Loading from './Loading';
 
 
 export {
@@ -28,5 +29,6 @@ export {
   NavBar,
   Popup,
   FriendGrid,
-  UserPhotoItem
+  UserPhotoItem,
+  Loading
 }

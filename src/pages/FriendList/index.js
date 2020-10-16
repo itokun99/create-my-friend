@@ -4,15 +4,21 @@ import { useHistory } from 'react-router-dom';
 import { icUserPlus, icHome } from '../../assets/images';
 import { useSelector } from 'react-redux';
 import { getFriend } from '../../services';
+import { useDispatch } from 'react-redux';
+import { setLoading } from '../../modules';
 
 
 const FriendList = () => {
   const history = useHistory();
+  const dispatch  = useDispatch();
   const friends = useSelector(state => state.friend.all);
-  
+
   React.useEffect(() => {
-    getFriend()
-  }, []);
+      dispatch(setLoading(true));
+      getFriend()
+        .then(() => dispatch(setLoading(false)))
+        .catch(() => dispatch(setLoading(false)));
+  }, [dispatch])
   
 
 
@@ -22,7 +28,7 @@ const FriendList = () => {
       <NavBar title="Friend List" />
       <div className="friend-list__content">
         {friends.map(friend => {
-          return <UserListItem image={friend.photo} key={friend.id} title={`${friend.firstName} ${friend.lastName}`} subtitle={`${friend.age} Yo`} />
+          return <UserListItem onClick={() => history.push(`/friend/${friend.id}`)}image={friend.photo} key={friend.id} title={`${friend.firstName} ${friend.lastName}`} subtitle={`${friend.age} Yo`} />
         })}
       </div>
       <BottomHover 

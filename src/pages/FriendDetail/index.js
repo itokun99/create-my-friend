@@ -2,9 +2,10 @@ import React from 'react';
 import {Container, ImageInput, FormGroup, Button, NavBar, BottomHover} from '../../components';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setPopup } from '../../modules';
+import { setPopup, setLoading } from '../../modules';
 import { icUserEdit, icClose } from '../../assets/images';
 import { getFriend, deleteFriend } from '../../services'
+
 
 
 const FriendDetail = () => {
@@ -20,14 +21,18 @@ const FriendDetail = () => {
 
   const initialData = React.useCallback(() => {
     if(id) {
+      dispatch(setLoading(true))
       getFriend(id).then(data => {
         setImage(data.photo)
         setFirstName(data.firstName)
         setLastName(data.lastName);
         setAge(data.age)
+        dispatch(setLoading(false))
+      }).catch(err => {
+        dispatch(setLoading(false))
       })
     }
-  }, [id])
+  }, [id, dispatch])
 
   const submitDelete = async () => {
     if(id) {

@@ -3,10 +3,13 @@ import {Container, ImageInput, Input, FormGroup, Button, NavBar} from '../../com
 import { useHistory, useParams } from 'react-router-dom';
 import { createFriend, updateFriend } from '../../services';
 import { getFriend } from '../../services'
+import { setLoading } from '../../modules';
+import { useDispatch } from 'react-redux';
 
 
 const FormFriend = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const { id } = useParams();
 
   const [image, setImage] = React.useState(null);
@@ -27,11 +30,15 @@ const FormFriend = () => {
       photo: image
     }
 
+    dispatch(setLoading(true))
+
     if(id) {
       await updateFriend(id, payload);
     } else {
       await createFriend(payload);
     }
+
+    dispatch(setLoading(false))
     history.goBack()
   }
 

@@ -1,5 +1,6 @@
 import imgHome from './img-home.svg';
 import imgUser from './img-user.svg';
+import imgLoading from './img-loading.svg';
 
 import icUserPlus from './ic-user-plus.svg';
 import icUserEdit from './ic-user-edit.svg';
@@ -20,5 +21,6 @@ export {
   icContact,
   icArrowLeft,
   icClose,
-  icArrowRight
+  icArrowRight,
+  imgLoading
 }
