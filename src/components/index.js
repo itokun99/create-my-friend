@@ -13,6 +13,7 @@ import Popup from './Popup';
 import UserPhotoItem from './UserPhotoItem';
 import FriendGrid from './FriendGrid';
 import Loading from './Loading';
+import MenuItem from './MenuItem';
 
 
 export {
@@ -30,5 +31,6 @@ export {
   Popup,
   FriendGrid,
   UserPhotoItem,
-  Loading
+  Loading,
+  MenuItem
 }

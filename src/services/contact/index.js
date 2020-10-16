@@ -20,6 +20,7 @@ export const getFriend = async (id = '') => {
   try {
     const response = await fetch(`${apiUrl.contact}${id && `/${id}`}`);
     const result = await response.json();
+
     const { data } = result;
 
     if(!id) {
@@ -45,6 +46,10 @@ export const createFriend = async (payload = {}) => {
     });
     const result = await response.json();
 
+    if(response && response.status !== 201) {
+      throw result;
+    }
+
     return result;
   } catch (err) {
     throw err;
@@ -64,6 +69,10 @@ export const updateFriend = async (id = '', payload = {}) => {
       headers
     });
     const result = await response.json();
+
+    if(response && response.status === 201) {
+      throw result;
+    }
 
     return result;
   } catch (err) {
@@ -85,8 +94,10 @@ export const deleteFriend = async (id = '') => {
 
     const result = await response.json();
 
+    console.log(result, response);
 
-    if(response && (response.status !== 200 || response.status !== 201)) {
+
+    if(response && response.status !== 200) {
       throw result;
     }
 

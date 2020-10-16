@@ -3,7 +3,7 @@ import {Container, ImageInput, Input, FormGroup, Button, NavBar} from '../../com
 import { useHistory, useParams } from 'react-router-dom';
 import { createFriend, updateFriend } from '../../services';
 import { getFriend } from '../../services'
-import { setLoading } from '../../modules';
+import { setLoading, setPopup } from '../../modules';
 import { useDispatch } from 'react-redux';
 
 
@@ -32,10 +32,17 @@ const FormFriend = () => {
 
     dispatch(setLoading(true))
 
-    if(id) {
-      await updateFriend(id, payload);
-    } else {
-      await createFriend(payload);
+    try {
+      if(id) {
+        await updateFriend(id, payload);
+      } else {
+        await createFriend(payload);
+      }
+    } catch (err) {
+      dispatch(setPopup({
+        title: err && err.message ? err.message : 'Something Wrong!',
+        show: true
+      }))
     }
 
     dispatch(setLoading(false))

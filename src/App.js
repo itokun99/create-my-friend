@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard';
 import FormFriend from './pages/FormFriend';
 import FriendList from './pages/FriendList';
 import FriendDetail from './pages/FriendDetail';
+import EditProfile from './pages/EditProfile';
+import Menu from './pages/Menu';
 import { AppContainer, Popup, Loading } from './components';
 import { useSelector, useDispatch } from 'react-redux';
 import { getStorage } from './services';
@@ -28,6 +30,8 @@ const App = () => {
     <BrowserRouter>
       <AppContainer>
         <Switch>
+          <Route path="/profile" component={EditProfile} exact={true} name="Profile" />
+          <Route path="/menu" component={Menu} exact={true} name="Menu" />
           <Route path="/friend/add" component={FormFriend} exact={true} name="AddFriend" />
           <Route path="/friend/:id/edit" component={FormFriend} exact={true} name="EditFriend" />
           <Route path="/friend/:id" component={FriendDetail} exact={true} name="FriendDetail" />

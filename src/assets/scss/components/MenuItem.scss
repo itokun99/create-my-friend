@@ -1,0 +1,16 @@
+.menu-item {
+  position: relative;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $grey-color;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+
+
+  &:hover {
+    background-color: $grey-color;
+  }
+}
