@@ -1,0 +1,28 @@
+.bottom-hover {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid $grey-color;
+  border-radius: 100px;
+  margin-bottom: 42px;
+  display: flex;
+  left: 50%;
+  transition: 0.5s ease-out;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+
+  &__column {
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    padding: 26px 54px;
+
+    &:hover {
+      background-color: $primary-color;
+
+      img {
+        filter: contrast(10) invert(1)
+      }
+    }
+  }
+}

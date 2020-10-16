@@ -1,0 +1,23 @@
+.form-friend {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  &__content {
+    padding-top: calc(64px + 42px);
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 0;
+    font-size: 24px;
+    max-width: 375px;
+    margin-bottom: 42px;
+  }
+
+  &__image-input {
+    max-width: 100%;
+    margin-bottom: 42px;
+  }
+}

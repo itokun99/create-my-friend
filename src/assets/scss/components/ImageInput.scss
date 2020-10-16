@@ -1,0 +1,22 @@
+.image-input {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-bottom: 42px;
+  border: 10px solid $primary-color;
+  border-radius: 50%;
+
+  &__input {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+}

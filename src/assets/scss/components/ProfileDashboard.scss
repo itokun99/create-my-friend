@@ -1,0 +1,21 @@
+.profile-dashboard {
+  padding: 42px;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  &__image {
+    border-radius: 50%;
+    border: 3px solid $primary-color;
+    width: 75px;
+    height: 75px;
+  }
+}

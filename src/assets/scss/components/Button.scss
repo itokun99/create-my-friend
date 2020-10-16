@@ -1,0 +1,20 @@
+.button {
+  background-color: $primary-color;
+  padding: 12px 32px;
+  border: 2px solid $primary-color;
+  border-radius: 12px;
+  font-weight: bold;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+
+  &--block {
+    width: 100%;
+    display: block;
+  }
+
+  &--danger {
+    background-color: $danger-color;
+    border-color: $danger-color;
+  }
+}
