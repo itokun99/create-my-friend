@@ -1,4 +1,4 @@
-import { store, setFriend, setPopup } from '../../modules';
+import { store, setFriend } from '../../modules';
 
 
 const baseUrl = 'https://simple-contact-crud.herokuapp.com';
@@ -13,7 +13,7 @@ const headers ={
 
 
 /**
- * get friend data from api
+ * get contact data from api
  * @param {*} id is optional
  */
 export const getFriend = async (id = '') => {
@@ -32,6 +32,10 @@ export const getFriend = async (id = '') => {
 }
 
 
+/**
+ * create contact data from api
+ * @param {*} id is optional
+ */
 export const createFriend = async (payload = {}) => {
   try {
     const response = await fetch(`${apiUrl.contact}`, {
@@ -48,6 +52,10 @@ export const createFriend = async (payload = {}) => {
 }
 
 
+/**
+ * update contact data from api
+ * @param {*} id is optional
+ */
 export const updateFriend = async (id = '', payload = {}) => {
   try {
     const response = await fetch(`${apiUrl.contact}${id && `/${id}`}`, {
@@ -64,6 +72,11 @@ export const updateFriend = async (id = '', payload = {}) => {
 }
 
 
+
+/**
+ * delete contact data from api
+ * @param {*} id is optional
+ */
 export const deleteFriend = async (id = '') => {
   try {
     const response = await fetch(`${apiUrl.contact}${id && `/${id}`}`, {

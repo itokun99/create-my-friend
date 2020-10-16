@@ -4,7 +4,7 @@ import Image from '../Image';
 import { imgUser } from '../../assets/images';
 
 
-const UserPhotoItem = ({ name, image, age, onClick }) => {
+const UserPhotoItem = ({ image, onClick }) => {
   const imgSrc = image && image !== 'N/A' ? image : imgUser;
   return (
     <Image isBackgroundImage src={imgSrc} className="user-photo-item" onClick={onClick} />
@@ -12,16 +12,12 @@ const UserPhotoItem = ({ name, image, age, onClick }) => {
 }
 
 UserPhotoItem.propTypes = {
-  name: PropTypes.string,
   image: PropTypes.any,
-  age: PropTypes.string,
   onClick: PropTypes.func,
 }
 
 UserPhotoItem.defaultProps = {
-  name: '',
   image: '',
-  id: '',
   onClick: () => {},
 }
 

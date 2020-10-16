@@ -30,6 +30,7 @@ const FriendList = () => {
         {friends.map(friend => {
           return <UserListItem onClick={() => history.push(`/friend/${friend.id}`)}image={friend.photo} key={friend.id} title={`${friend.firstName} ${friend.lastName}`} subtitle={`${friend.age} Yo`} />
         })}
+        <div style={{ paddingTop: 150 }}  />
       </div>
       <BottomHover 
         onClickLeft={() => history.push('/friend/add')} 

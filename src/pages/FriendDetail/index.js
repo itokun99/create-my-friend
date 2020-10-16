@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, ImageInput, FormGroup, Button, NavBar, BottomHover} from '../../components';
+import {Container, ImageInput, FormGroup, NavBar, BottomHover} from '../../components';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setPopup, setLoading } from '../../modules';

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Container, ProfileDashboard, BottomHover, FriendGrid } from '../../components';
+import { ProfileDashboard, BottomHover, FriendGrid } from '../../components';
 import { icUserPlus, icContact } from '../../assets/images';
 import { useHistory } from 'react-router-dom';
-import { getFriend } from '../../services';
 
 const Dashboard = () => {
   const history = useHistory();
@@ -11,6 +10,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <ProfileDashboard />
       <FriendGrid />
+      <div style={{ paddingTop: 150 }}  />
       <BottomHover 
         onClickLeft={() => history.push('/friend/add')} 
         onClickRight={() => history.push('/friend')} 

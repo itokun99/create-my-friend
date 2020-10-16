@@ -12,7 +12,7 @@ const ProfileDashboard = () => {
   return (
     <div className="profile-dashboard">
       <h3 className="profile-dashboard__title">Good morning,<br /> {profile && profile.name}</h3>
-      <Image src={image} className="profile-dashboard__image" />
+      <Image src={image} isBackgroundImage className="profile-dashboard__image" />
     </div>
   )
 }
